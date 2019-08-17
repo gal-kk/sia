@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
-</head>
-
-<body>
-<h1>Design your taco!</h1>
-
-
 <html xmlns:th="http://www.thymeleaf.org">
 <form th:method="POST" th:object="${design}">
     <span
             th:if="${#fields.hasErrors('ingredients')}"
-            th:errors="${'ingredient'}"
+            th:errors="*{ingredients}"
     ></span>
 
     <h1>wrap</h1>
@@ -54,6 +42,4 @@
     <input type="text" th:field="*{name}">
     <button>Press Here</button>
 </form>
-</html>
-</body>
 </html>
